@@ -1,0 +1,24 @@
+<img #pokemonImage (click)="movement(pokemonImage)" [src]="pokemonUrl" alt="รูปโปเกม่อน">
+
+<div>
+    <p-table [value]="pokemonDataList" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+               <th></th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pokemon>
+            <tr>
+                <td>{{pokemon.name}}</td>
+                <td>{{pokemon.url}}</td>
+                <td class="control-button-table"><p-button  
+                    (onClick)="showPo(pokemon)"
+                    label="show" icon="pi pi-search"></p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

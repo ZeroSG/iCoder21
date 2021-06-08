@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 .D{
+    /**
+    *! grid-template-rows ความสูง
+    *! height 100% ของหน้าเว็บ
+    *! row-gap แสดงช่องว่าง
+    **/
     display: grid;
     grid-template-rows: 80px 1fr;
     height: 100vh;
@@ -7,8 +12,24 @@
 }
 
 header.D_header {
+     /**
+    *! justify-content อยู่กลางแนวตั้ง
+    *! align-items ของหน้าเว็บแนวนอน
+    *! column-gap แสดงช่องว่าง
+    **/
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 0.5em;
 }
+.query-container{
+    display: flex;
+    place-content: center;
+    grid-column-gap: 0.5em;
+    column-gap: 0.5em;
+    padding: 0.5em;
+}
+.table-container {
+    display: flex;
+    justify-content: flex-end;
+    }

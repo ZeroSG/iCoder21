@@ -11,7 +11,11 @@ import {ButtonModule} from 'primeng/button';
 import { StudentComponent } from './student/student.component';
 import { HomeComponent } from './home/home.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
-
+import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
+import {HttpClientModule} from '@angular/common/http';
+import { PokemonComponent } from './pokemon/pokemon.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,14 +25,20 @@ import { AddstudentComponent } from './addstudent/addstudent.component';
     Ma4jay3Component,
     StudentComponent,
     HomeComponent,
-    AddstudentComponent
+    AddstudentComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule,
+    TableModule,
+    HttpClientModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

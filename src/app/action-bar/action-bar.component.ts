@@ -30,6 +30,10 @@ export class ActionBarComponent implements OnInit {
     if(this.counter - this.step >= this.notBelow){
     this.counter = this.counter - this.step;
   }
+  /** 
+   *! numberChange คือการปลอยอีเวน ของ @Output() numberChange = new EventEmitter
+   *! emit() คือคือการสั่งให้อีเวนทำงาน การปลอยค่า เช่น ปลอยคา่ตัวแปลของ counter โดยใช้ emit(this.counter)
+   **/
   this.numberChange.emit(this.counter);
 }
 

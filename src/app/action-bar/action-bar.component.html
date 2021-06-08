@@ -2,6 +2,11 @@
     <!-- <button type="button" (click)="decrease()">-</button> -->
     <p-button label="ลบ" (click)= "decrease()" icon="pi pi-check" styleClass="p-button-sm"></p-button>
     <!-- <input type="text" [value]="counter"> -->
+    /**
+     *! property binding คือการทูกค่ากับตัวแปล เช่น
+     *! [value]="counter" คือการทุกค่ากับตัวแปล เช่น 
+     *! cost counter = 200 แล้วส่งค่าไปให้ [value] 
+    **/
     <input type="text" [value]="counter"pInputText />
     <p-button label="เพิ่ม" (click)= "increase()" icon="pi pi-check" styleClass="p-button-sm"></p-button>
     <!-- <button type="button" (click)= "increase()">+</button> -->

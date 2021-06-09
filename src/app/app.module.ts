@@ -16,6 +16,14 @@ import {TableModule} from 'primeng/table';
 import {HttpClientModule} from '@angular/common/http';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {ToastModule} from 'primeng/toast';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { EditStudentComponent } from './edit-student/edit-student.component';
+import {CalendarModule} from 'primeng/calendar';
+import { PokemongoComponent } from './pokemongo/pokemongo.component';
+import { StatusPipe } from './status.pipe';
 
 
 @NgModule({
@@ -26,7 +34,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     StudentComponent,
     HomeComponent,
     AddstudentComponent,
-    PokemonComponent
+    PokemonComponent,
+    NotFoundComponent,
+    EditStudentComponent,
+    PokemongoComponent,
+    StatusPipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     DropdownModule,
     TableModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    MessagesModule,
+    MessageModule,
+    CalendarModule
     
   ],
   providers: [],

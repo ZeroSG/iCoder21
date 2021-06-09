@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../pokemon.service';
 import { Pokemon, PokemonData, PokemonRespone} from './pokemon';
 
 @Component({
@@ -8,28 +9,48 @@ import { Pokemon, PokemonData, PokemonRespone} from './pokemon';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  pokemonUrl: string ='';
+  pokemonUrl: string = '';
   pokemonDataList: PokemonData[] = [];
-  constructor(public http: HttpClient) {
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon/ditto')
-    .subscribe(response=>{
+
+  // sprites: Sprites|null = null
+
+  image_sprites: string[] = [];
+
+  constructor(public http: HttpClient, private pokemonService: PokemonService) {
+    this.pokemonService.getPokemonByName('pikachu').subscribe((response) => {
       this.pokemonUrl = response.sprites.front_default;
-    })
-    this.http.get<PokemonRespone>('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
-    .subscribe(response=>{
+    });
+
+    // this.http
+    //   .get<any>('https://pokeapi.co/api/v2/pokemon/pikachu')
+    //   .subscribe((response) => {
+    //     this.pokemonUrl = response.sprites.front_default;
+    //   });
+
+    this.pokemonService.getPokemonAll().subscribe((response) => {
       this.pokemonDataList = response.results;
-    })
-   }
-  ngOnInit(): void {
+    });
   }
 
-  movement(el: HTMLImageElement){
-    el.animate({transform:'translateX(100px) rotate(20deg)'},{duration:500})
+  ngOnInit(): void {}
+
+  movement(el: HTMLImageElement) {
+    el.animate(
+      { transform: 'translateX(100px) rotate(20deg)' },
+      { duration: 500 }
+    );
   }
-  showPo(pokemon: PokemonData){
-    this.http.get<Pokemon>(pokemon.url)
-    .subscribe((response)=>{
+
+  showPokemon(pokemon: PokemonData) {
+    this.http.get<Pokemon>(pokemon.url).subscribe((response) => {
       this.pokemonUrl = response.sprites.front_default;
-    })
+      // this.sprites = response.sprites;
+      this.image_sprites = Object.keys(response.sprites)
+        .filter(
+          (sprite) => sprite.startsWith('back') || sprite.startsWith('front')
+        )
+        .filter((sprite) => (response.sprites as any)[sprite] !== null)
+        .map((sprite) => (response.sprites as any)[sprite]);
+    });
   }
 }

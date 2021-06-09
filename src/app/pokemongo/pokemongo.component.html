@@ -1,0 +1,50 @@
+<!-- <p-dropdown [options]="cities" [formControl]="cityFormControl" 
+ placeholder="Select a City" optionLabel="name" [showClear]="true">
+</p-dropdown>
+{{cityFormControl.value | json}}
+<p-dropdown [options]="pokemonDataList"
+ placeholder="Select a City" optionLabel="name"
+ (onChange)="selectedPokemon($event)" [showClear]="true">
+</p-dropdown>
+<span *ngFor="let image of image_sprites">
+    <img class="clickable" #imageEl [src]="image" alt="รูปโปเกม่อน">
+</span> -->
+
+<!-- <p-dropdown
+  [options]="cities"
+  [formControl]="cityFormControl"
+  placeholder="Select a City"
+  optionLabel="name"
+  [showClear]="true"
+>
+</p-dropdown>
+
+{{ cityFormControl.value | json }} -->
+
+<p-dropdown
+  [options]="pokemonDataList"
+  placeholder="Select a Pokemon"
+  optionLabel="name"
+  [formControl]="pokemonFormControl"
+  (onChange)="selectedPokemon($event)"
+  [showClear]="true"
+>
+</p-dropdown>
+
+<!-- {{pokemonFormControl.value | json}} -->
+
+<span *ngFor="let imageUrl of image_sprites">
+    <img 
+    #imageEl
+    [src]="imageUrl"
+     alt="รูปโปเกมอน"
+     class="clickable-img"
+     >
+  </span>
+
+  <div *ngFor="let abi of abilities">
+        {{abi}}
+  </div>
+
+  <p-button label="บันทึก" (onClick)="savePokemon()"></p-button>
+  

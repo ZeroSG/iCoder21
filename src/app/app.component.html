@@ -1,12 +1,13 @@
-/**
+ <!-- /**
 *! อ้างอิงถึง component ma4jay3
+**/ -->
 <!-- <app-ma4jay3></app-ma4jay3> -->
-**/
-/**
+<!-- /**
 *! [notBelow]=0 = ส่งค่า @input น้อยสุด
 *! [notMore]=5 = ส่งค่า @input มากสุด
 *! [step]=100 = ส่งค่า @input จำนวนการเพิ่มลด
 *! ค่าที่ปล่าย ของ  @Output()หรืออีเวน จะมีสัญลัษณะ $event
+*/ -->
 <!-- <app-action-bar (numberChange)="actionBN1=$event;sumR()" [notBelow]=0 [step] =5 [notMore] = 100></app-action-bar>actionBN1 = {{actionBN1 }}
 <app-action-bar [number]="actionBN2" (numberChange)="actionBN2=$event;sumR()"[notBelow]=0 [step] =10 [notMore] = 200></app-action-bar>actionBN2 = {{actionBN2 }}
 <app-action-bar [number]="actionBN3" (numberChange)="actionBN3=$event;sumR()"[notBelow]=0 [step] =20 [notMore] = 300></app-action-bar>actionBN3 = {{actionBN3 }}
@@ -14,12 +15,13 @@
   ผลรวม {{result}}
 </div>
 <input type="text" pInputText /> -->
-**/
+<p-toast></p-toast>
+
 <div class="D">
   <header class="D_header">
-    /**
+    <!-- /**
     *! [routerLink] = "[path:]" เช่น [routerLink] ="['home']">
-    */
+    */ -->
    <span [routerLink] ="['home']">
     Home
    </span>
@@ -32,20 +34,25 @@
    <span [routerLink] ="['pokemon']">
     pokemon
    </span>
+   <span [routerLink] ="['pokemonGo']">
+    pokemonGo
+   </span>
   </header>
   <main >
-    /** 
+    <!-- /** 
     *! การแสดงผลของ component เมื่อเปลี่ยน routing แล้วมาแสดงผลหรือจุดกำหนดในการแสดงผล ของ routing ใช้ <router-outlet></router-outlet>
-    */
+    */ -->
     <router-outlet></router-outlet>
     <!-- <p-button label="Calculate"(onClick)="transform5BahtToBaht()"></p-button>
     <p-button label="Sum"(onClick)="sum5BahtToBaht()"></p-button>
-
+    <!-- /** 
+    *! fiveBahtL | json แสดงใรรูปแบบ [0,1,2]
+    */  -->
+    <!-- /**
     5 บาท {{fiveBahtL | json}}
     1 บาท {{oneBahtL | json}}
-    ผลรวม {{summ}} -->
-    /**
+    ผลรวม {{summ}} 
     *!dfdf
-    **/
+    */ -->
   </main>
 </div>

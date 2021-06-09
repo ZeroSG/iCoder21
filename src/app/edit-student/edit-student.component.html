@@ -1,5 +1,4 @@
-<p-toast></p-toast>
-<div [formGroup]="addStudentConditionFormGroup" class="student-form">
+<div [formGroup]="editStudentConditionFormGroup" class="student-form">
     <div><span>
         ชื่อ :
     </span>
@@ -22,9 +21,7 @@
 </div>
 </div>
 <div class="query-container">
-    <p-button [disabled]="addStudentConditionFormGroup.invalid" label="บันทึก" (onClick)="saveStudent()"></p-button>
+    <p-button [disabled]="editStudentConditionFormGroup.invalid" label="บันทึก" (onClick)="saveStudent()"></p-button>
     <p-button label="ล้างค้าง" (onClick)="resetStudent()"></p-button>
     <p-button label="ย้อนกลับ" [routerLink] ="['/student']"></p-button>
 </div>
-invalid:{{addStudentConditionFormGroup.invalid}}
-

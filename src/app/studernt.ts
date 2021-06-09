@@ -3,11 +3,11 @@ export interface Student{
     email:string
     tel:string
   }
-  export interface responseStudentAll {
-  result: Student[];
+  export interface ResponseStudentAll {
+  result: StudentModel[];
 }
 
-interface Result {
+export interface StudentModel {
   createBy?: any;
   createDate?: string;
   email: string;
@@ -18,5 +18,12 @@ interface Result {
   updateDate?: string;
   version: number;
 }
+export interface StudentAllCondition {
+  name?: string;
+  email?: string;
+  tel?: string;
+}
+
+
 
   
